@@ -1,0 +1,19 @@
+[flake8]
+
+# F401 - unused import
+
+# W191, E117 - indentation
+# E201 whitespace after '['
+# E202 - whitespace before '('
+# E221 - multiple spaces before operator
+# E222 multiple spaces after operator
+# E241 - multiple spaces after ':'
+# E251 - unexpected spaces around equals
+# E261 - at least two spaces before inline comment
+# E401 - multiple imports on one line
+# E501 - line length
+# E722 - bare except
+
+ignore = W191, E117, E201, E202, E221, E222, E241, E251, E261, E401, E501, E722
+
+format = ${cyan}%(path)s${reset}:${yellow_bold}%(row)d${reset}:${green_bold}%(col)d${reset}: ${red_bold}%(code)s${reset} %(text)s

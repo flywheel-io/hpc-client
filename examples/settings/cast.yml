@@ -1,0 +1,76 @@
+cast:
+
+  # Cluster type.
+  # For a list of valid values, see cluster/__init__.py.
+  cluster: 'base'
+
+  # When set, scripts are still generated, but no HPC commands are ran.
+  # Useful for testing.
+  dry_run: true
+
+  # Contact email provided to users who run into errors.
+  admin_contact_email: '<Your-Email-Here>'
+
+  # When set, jobs are only allowed from users added to a group whitelist.
+  group_whitelist: true
+
+  # Job types that should be cast onto the HPC.
+  # Note: This MUST match a Flywheel-staff-configured interal setting.
+  job_match:
+    whitelist:
+      gear-name:
+        - safe-python-singularity
+      tag:
+        - hpc
+    # blacklist:
+    #   gear-name:
+    #     - example
+
+  # When enabled, templating properties will be dumped to the log.
+  # Useful for debugging a script or command template.
+  show_script_template_values: false
+  show_script_template_result: false
+  show_commnd_template_result: true
+
+
+
+  #
+  # Depending on your cluster implementation,
+  # the options below may already be set up for you.
+  #
+  # Check the corrresponding python file, and
+  # only un-comment these options if the hard-coded defaults
+  # need to change for your system.
+  #
+
+
+
+  # A jinja2-templated array representing the command to execute.
+  # See defn.ScriptTemplate for available values.
+  # command:
+  #   - 'sbatch'
+  #   - '{{script_path}}'
+
+  # When set, the script file is marked as executable (chmod +x).
+  # script_executable: false
+
+  # When set, the generated script is sent to the HPC command via stdin.
+  # command_script_stdin: false
+
+  # A jinja2-templated string representing the script to generate.
+  # See defn.ScriptTemplate for available values.
+  # script: |+
+  #   #!/bin/bash
+  #   #SBATCH --job-name=fw-{{job.fw_id}}
+  #   #SBATCH --ntasks=1
+  #   {%- if job.cpu -%}#SBATCH --cpus-per-task={{job.cpu}}{%- endif %}
+  #   {%- if job.ram -%}#SBATCH --mem-per-cpu={{job.ram}}{%- endif %}
+  #   #SBATCH --output {{script_log_path}}
+
+  #   set -euo pipefail
+
+  #   source "{{cast_path}}/settings/credentials.sh"
+  #   cd "{{engine_run_path}}"
+
+  #   set -x
+  #   srun ./engine run --single-job %JOB%
