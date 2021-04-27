@@ -36,7 +36,7 @@ cd fw-cast
 
 git remote add private <your-github-location>
 
-git push private -U --all
+git push private --all
 ```
 
 7. If you are tracking your settings (recommended), remove `/settings` from `.gitignore`, then add your files and make a commit:
@@ -46,5 +46,5 @@ git add ./settings
 
 git commit -m "Track setting files"
 
-git push
+git push private
 ```

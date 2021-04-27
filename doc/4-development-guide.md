@@ -21,7 +21,7 @@ code/
 │
 └── util               Fixed functionality; do not modify
     ├── __init__.py
-    ├── defn.py        Data structures definitions
+    ├── defn.py        Data structure definitions
     ├── frame.py       Program setup
     └── net.py         SDK helpers
 ```
@@ -38,7 +38,8 @@ To add a new queue type, follow these steps:
 
 4. Review `cluster/base.py` for the various methods you can override.
 
-5. Avoid modifying or overriding the functions in `cluster/common.py`. We reserve the right to make changes to those functions for future Flywheel features.
+5. Avoid modifying or overriding the functions in `cluster/common.py`.<br/>
+We reserve the right to make changes to those functions for future Flywheel features.
 
 6. Avoid modifying the `util` package. Instead, place helper functions on your new class.
 

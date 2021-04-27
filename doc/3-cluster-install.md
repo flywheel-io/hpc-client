@@ -25,7 +25,12 @@ python -m pip install pipenv
 Snag a copy of this repository:
 
 ```
-git clone <your-github-location>
+# If you are tracking your settings as shown previously,
+# add the following to your HPC user's ~/ssh/config:
+Host github.com
+  IdentityFile ~/fw-cast-st-jude-key
+
+git clone <your-github-location> fw-cast
 
 cd fw-cast
 ```
@@ -34,6 +39,12 @@ Prepare your cluster-specific files:
 
 ```
 ./process/setup.sh
+```
+
+Important - in a shared environment, protect your credentials:
+
+```
+chmod 0600 ./settings/credentials.sh
 ```
 
 ## Configure
