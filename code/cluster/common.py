@@ -50,11 +50,8 @@ class Common:
 		Fetch matching jobs to be cast.
 		"""
 
-		raw_match = self.config.cast.job_match
-		match, search = net.prepare_match_and_search(raw_match)
-
-		# self.log.debug('Match ' + str(match))
-		# self.log.debug('search ' + str(search))
+		search = net.prepare_search(self.config.cast)
+		# self.log.debug('Search syntax: ' + str(search))
 
 		try:
 			jobs = []

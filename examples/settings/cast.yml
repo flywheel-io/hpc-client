@@ -14,17 +14,14 @@ cast:
   # When set, jobs are only allowed from users added to a group whitelist.
   group_whitelist: true
 
-  # Job types that should be cast onto the HPC.
-  # Note: This MUST match a Flywheel-staff-configured interal setting.
-  job_match:
-    whitelist:
-      gear-name:
-        - safe-python-singularity
-      tag:
-        - hpc
-    # blacklist:
-    #   gear-name:
-    #     - example
+  # When set, jobs with the tag "hpc" are cast.
+  cast_on_tag: true
+
+  # Gear names in this list are always cast.
+  # Only works when cast_on_tag is false.
+  # Used for backwards compatibility.
+  # cast_gear_whitelist:
+  #   - safe-python-singularity
 
   # When enabled, templating properties will be dumped to the log.
   # Useful for debugging a script or command template.
@@ -32,7 +29,8 @@ cast:
   show_script_template_result: false
   show_commnd_template_result: true
 
-
+  # Internal Flywheel setting. Leave this at default unless instructed.
+  use_hold_engine: true
 
   #
   # Depending on your cluster implementation,

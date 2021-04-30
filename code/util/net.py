@@ -1,6 +1,6 @@
-import copy
-
 import flywheel
+
+from . import frame
 
 
 def add_system_log(fw, job_id, msg):
@@ -22,29 +22,36 @@ def cancel_job(fw, job_id):
 	fw.modify_job(job_id, flywheel.Job(state='cancelled'))
 
 
-def prepare_match_and_search(raw_match):
+def prepare_search(cast_config):
 	"""
-	Given a raw match object from cast.yml,
-	prepare an actual match & search syntax for use with the API.
-
-	This is not yet updated to handle a full job match.
+	Prepare search syntax for use with the API.
 	"""
 
-	match = copy.deepcopy(raw_match)
+	search = ''
 
-	# Job match syntax; capabilities are not configurable
-	match['capabilities'] = [
-		'networking',
-		'singularity',
-	]
+	use_hpc_tag = cast_config.cast_on_tag
+	gears       = cast_config.cast_gear_whitelist
 
-	gears = match['whitelist']['gear-name']
+	if cast_config.use_hold_engine:
+		search += 'state=running'
+	else:
+		search += 'state=pending'
 
-	# Queue regex search syntax
-	# search = 'state=running,gear_info.name=~' + '|'.join(gears)
-	search = 'state=pending,gear_info.name=~' + '|'.join(gears)
+	# Check for invalid config
+	if use_hpc_tag and len(gears) > 0:
+		frame.fatal('Invalid configuration - cast_on_tag and cast_gear_whitelist are mutually exclusive')
 
-	return match, search
+	if not use_hpc_tag and len(gears) <= 0:
+		frame.fatal('Invalid configuration - one of cast_on_tag or cast_gear_whitelist must be in use')
+
+	# Search syntax ands conditions together
+	if use_hpc_tag:
+		search += ",tags=hpc"
+
+	if len(gears) > 0:
+		search += ',gear_info.name=~' + '|'.join(gears)
+
+	return search
 
 
 def load_user_id_whitelist(fw):

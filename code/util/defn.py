@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Any, List, Optional
 
 
@@ -13,7 +13,8 @@ class ConfigFileCast(BaseModel):
 	admin_contact_email:  str
 	group_whitelist:      bool
 
-	job_match: Any
+	cast_on_tag: bool
+	cast_gear_whitelist: List[str] = Field(default_factory=list)
 
 	show_script_template_values: bool
 	show_script_template_result: bool
@@ -24,6 +25,8 @@ class ConfigFileCast(BaseModel):
 
 	script:               Optional[str]
 	script_executable:    Optional[bool]
+
+	use_hold_engine: bool
 
 
 class ConfigFile(BaseModel):
