@@ -4,6 +4,10 @@ Cast is a self-service solution that allows Flywheel jobs and gears to run on a 
 
 **Project Status:** Prototype. You may run into some rough edges, and will need to work in tandem with Flywheel staff.
 
+## Architecture
+
+![fw-cast architecture](https://user-images.githubusercontent.com/75435671/121969366-b6e19880-cd39-11eb-8660-3a9c4e2bd3e6.jpg)
+
 ## HPC types
 
 Cast supports several queue mechanisms out of the box:
