@@ -6,7 +6,7 @@ Cast is a self-service solution that allows Flywheel jobs and gears to run on a 
 
 ## Architecture
 
-![fw-cast architecture](https://user-images.githubusercontent.com/75435671/121969366-b6e19880-cd39-11eb-8660-3a9c4e2bd3e6.jpg)
+![fw-cast architecture](https://user-images.githubusercontent.com/75435671/121969698-71719b00-cd3a-11eb-95a3-ff70a598491e.png)
 
 ## HPC types
 
