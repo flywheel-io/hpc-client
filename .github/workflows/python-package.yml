@@ -5,7 +5,7 @@ name: Python package
 
 on:
   push:
-    branches: [ pybinary ]
+    branches: [ pybinary, test ]
   
 
 jobs:
