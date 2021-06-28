@@ -31,3 +31,7 @@ jobs:
     - name: Test with pytest
       run: |
         pwd
+        sh ./process/set-up
+        ls
+        sh ./setting/start_cast
+        
