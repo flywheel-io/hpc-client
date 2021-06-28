@@ -33,7 +33,8 @@ jobs:
         pwd
         sh ./installer.sh
         cd process
-        sh ./setup.sh
+        chmod +x setup.sh
+        ./setup.sh
         cd ..
         ls
         echo "setting folder is created sucessfully"
