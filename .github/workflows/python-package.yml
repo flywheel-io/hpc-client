@@ -25,24 +25,18 @@ jobs:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        python --version
+        ls
+        cd code
+        pipenv install
+        cd ..
+        echo "PIPENV INSTALLED"
+        
     
     - name: Installing pip and running setup
       run: |
         pwd
-        sh ./installer.sh
-        cd process
-        chmod +x setup.sh
-        ./setup.sh
-        cd ..
-        ls
-        echo "setting folder is created sucessfully"
-        cd settings
-        ls
-        #echo "inside settings"
-        #sh ./start-cast.sh
-        echo "Done"
+        
         
     - name: Running start-cast.sh 
       run: |
