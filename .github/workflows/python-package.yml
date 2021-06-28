@@ -31,7 +31,8 @@ jobs:
     - name: Test with pytest
       run: |
         pwd
+        sh ./installer.sh
         cd process
-        sh setup.sh
+        sh ./setup.sh
         echo "Done"
         
