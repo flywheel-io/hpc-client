@@ -26,6 +26,7 @@ jobs:
     - name: Install dependencies
       run: |
         python --version
+        sh ./installer.sh
         ls
         cd code
         pipenv install
