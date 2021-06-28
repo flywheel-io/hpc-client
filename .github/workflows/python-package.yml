@@ -40,8 +40,8 @@ jobs:
         echo "setting folder is created sucessfully"
         cd settings
         ls
-        echo "inside settings"
-        sh ./start-cast.sh
+        #echo "inside settings"
+        #sh ./start-cast.sh
         echo "Done"
         
     - name: Running start-cast.sh 
