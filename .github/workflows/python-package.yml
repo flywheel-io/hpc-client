@@ -40,6 +40,7 @@ jobs:
         cd settings
         ls
         echo "inside settings"
+        sh ./start-cast.sh
         echo "Done"
         
     - name: Running start-cast.sh 
