@@ -37,11 +37,14 @@ jobs:
         cd ..
         ls
         echo "setting folder is created sucessfully"
+        cd settings
+        ls
+        echo "inside settings"
         echo "Done"
         
     - name: Running start-cast.sh 
       run: |
        pwd
-       cd settings
+       
        
         
