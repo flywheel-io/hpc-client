@@ -29,8 +29,7 @@ jobs:
         sh ./installer.sh
         ls
         cd code
-        pipenv install
-        cd ..
+        pipenv --version
         echo "PIPENV INSTALLED"
         
     
