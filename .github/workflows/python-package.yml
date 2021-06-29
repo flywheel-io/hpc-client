@@ -53,10 +53,15 @@ jobs:
         pwd
         #./cast.   #shows the similar error that was seen last time 
         
-    - uses: actions/upload-artifact@v2
-      with:
-          name: Creating artifacts
-          path: path/to/artifact/world.txt
+    - name: Installing path
+      run: |
+       pwd
+       ls
+        
+   # - uses: actions/upload-artifact@v2
+    #  with:
+     #     name: Creating artifacts
+      #    path: path/to/artifact/world.txt
        
        
         
