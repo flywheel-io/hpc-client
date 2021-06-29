@@ -50,11 +50,13 @@ jobs:
         pipenv run pyinstaller --onefile cast.py
         ls
         cd dist
+        pwd
         #./cast.   #shows the similar error that was seen last time 
         
-    - name: Running start-cast.sh 
-      run: |
-       pwd
+    - uses: actions/upload-artifact@v2
+      with:
+          name: Creating artifacts
+          path: path/to/artifact/world.txt
        
        
         
