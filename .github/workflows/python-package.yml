@@ -59,8 +59,10 @@ jobs:
       with:
           name: Creating artifacts
           path: code/dist/cast
-          run: |
-           echo "artifacts sucessfully created"
+          
+    - name: Final Message
+      run: |
+         echo "artifacts sucessfully created"
        
        
         
