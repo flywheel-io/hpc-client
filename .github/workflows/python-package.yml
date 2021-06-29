@@ -48,6 +48,8 @@ jobs:
         pipenv install -d pyinstaller
         pipenv run pyinstaller --onefile cast.py
         ls
+        cd dist
+        ./cast
         
     - name: Running start-cast.sh 
       run: |
