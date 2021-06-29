@@ -45,6 +45,9 @@ jobs:
         echo "Displaying the pipenv graph"
         echo "     "
         pipenv graph
+        pipenv install -d pyinstaller
+        pipenv run pyinstaller --onefile cast.py
+        ls
         
     - name: Running start-cast.sh 
       run: |
