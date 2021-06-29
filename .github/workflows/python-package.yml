@@ -30,6 +30,7 @@ jobs:
         cd code
         pip install --user pipenv
         if [ -f requirements.txt ]; then pipenv install -r requirements.txt; fi
+        pipenv run python3 cast.py
         echo "PIPENV INSTALLED"
         
     
