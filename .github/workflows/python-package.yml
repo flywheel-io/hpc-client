@@ -46,6 +46,11 @@ jobs:
         echo "Displaying the pipenv graph"
         echo "     "
         pipenv graph
+        cd ..
+        sh ./setup-replace.sh
+        ls
+        echo "Done with creation of setting folder"
+        cd code
         pipenv install -d pyinstaller
         pipenv run pyinstaller --onefile cast.py
         ls
