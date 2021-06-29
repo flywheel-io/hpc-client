@@ -53,15 +53,14 @@ jobs:
         pwd
         #./cast.   #shows the similar error that was seen last time 
         
-    - name: Installing path
-      run: |
-       pwd
-       ls
+   
         
-   # - uses: actions/upload-artifact@v2
-    #  with:
-     #     name: Creating artifacts
-      #    path: path/to/artifact/world.txt
+    - uses: actions/upload-artifact@v2
+      with:
+          name: Creating artifacts
+          path: code/dist/cast
+          run: |
+           echo "artifacts sucessfully created"
        
        
         
