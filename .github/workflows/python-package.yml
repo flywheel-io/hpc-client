@@ -23,21 +23,28 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Install dependencies
+    - name: Install pipenv and run cast.py on pipenv shell
       run: |
         python --version
         ls
         cd code
         pip install --user pipenv
         if [ -f requirements.txt ]; then pipenv install -r requirements.txt; fi
-        pipenv run python3 cast.py
+        #pipenv run python3 cast.py
         echo "PIPENV INSTALLED"
         
     
-    - name: Installing pip and running setup
+    - name: Installing pipenv and pyinstaller
       run: |
         pwd
-        
+        python --version
+        ls
+        cd code
+        pip install --user pipenv
+        if [ -f requirements.txt ]; then pipenv install -r requirements.txt; fi
+        echo "Displaying the pipenv graph"
+        echo "     "
+        pipenv graph
         
     - name: Running start-cast.sh 
       run: |
