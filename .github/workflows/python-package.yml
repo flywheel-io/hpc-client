@@ -40,7 +40,7 @@ jobs:
         python --version
         ls
         cd code
-        pip install --user pipenv
+        pip install --user pipenv    #pipenv install in setup.sh would not work
         if [ -f requirements.txt ]; then pipenv install -r requirements.txt; fi
         echo "Displaying the pipenv graph"
         echo "     "
@@ -49,7 +49,7 @@ jobs:
         pipenv run pyinstaller --onefile cast.py
         ls
         cd dist
-        ./cast
+        #./cast.   #shows the similar error that was seen last time 
         
     - name: Running start-cast.sh 
       run: |
