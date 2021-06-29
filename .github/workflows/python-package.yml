@@ -31,8 +31,15 @@ jobs:
         pip install --user pipenv
         pipenv lock -r > requirements.txt
         if [ -f requirements.txt ]; then pipenv install -r requirements.txt; fi
-        #pipenv run python3 cast.py
-        echo "PIPENV INSTALLED"
+        cd ..
+        sh ./setup-replace.sh
+        ls
+        echo "Done with creation of setting folder"
+        cd code
+        echo "Printing pipenv graph"
+        pipenv graph
+        pipenv run python3 cast.py
+        echo "Running cast.py from pipenv shell"
         
     
     - name: Installing pipenv and pyinstaller
