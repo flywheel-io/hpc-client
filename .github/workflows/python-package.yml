@@ -30,6 +30,7 @@ jobs:
         ls
         cd code
         pipenv --version
+        pipenv install
         echo "PIPENV INSTALLED"
         
     
