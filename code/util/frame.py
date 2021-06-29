@@ -1,6 +1,7 @@
 import argparse, datetime, logging, json, os, warnings, yaml
 
 import flywheel, requests
+import sys
 
 from . import defn
 
@@ -34,7 +35,7 @@ log = logging
 def fatal(*args):
 	log.critical(*args)
 	log.critical('Exiting.')
-	exit(1)
+	sys.exit(1)
 
 
 def fw_fatal(msg, e):
@@ -169,14 +170,14 @@ def run_cmd():
 		c['creds']['credential'] = '<omitted>'
 
 		print(pretty_json(c))
-		exit(0)
+		sys.exit(0)
 
 	# Print job match in JSON
 	if args.show_match:
 		log.debug("Printing gear match")
 
 		print(pretty_json(config.dict()['cast']['job_match']))
-		exit(0)
+		sys.exit(0)
 
 	config.sdk = create_client(config.creds)
 
