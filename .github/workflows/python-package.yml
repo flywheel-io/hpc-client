@@ -30,7 +30,7 @@ jobs:
         ls
         cd code
         pipenv --version
-        pipenv install
+        pipenv run python3 cast.py
         echo "PIPENV INSTALLED"
         
     
