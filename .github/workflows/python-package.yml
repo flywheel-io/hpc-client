@@ -29,15 +29,16 @@ jobs:
         sh ./setup-replace.sh 
         echo "Running cast.py from pipenv shell"
         cd code
+        ls
         pipenv graph
         #pipenv run python3 cast.py   #shows same Host Not found error which I think was latest
         #echo "set up complete sucessfully"
-        pipenv install pyinstaller
-        pipenv run pyinstaller --onefile cast.py
-        ls
-        cd dist
-        pwd
-        ls
+        #pipenv install pyinstaller
+        #pipenv run pyinstaller --onefile cast.py
+        #ls
+        #cd dist
+        #pwd
+        #ls
        # ./cast  # if we run this shows cast.yml missing 
         
         
@@ -48,10 +49,10 @@ jobs:
         
    
         
-    - uses: actions/upload-artifact@v2
-      with:
-          name: Creating artifacts
-          path: code/dist/cast
+    #- uses: actions/upload-artifact@v2
+      #with:
+          #name: Creating artifacts
+         # path: code/dist/cast
           
     - name: Final Message
       run: |
