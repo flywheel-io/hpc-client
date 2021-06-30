@@ -40,6 +40,7 @@ jobs:
         mv /home/runner/work/fw-cast/fw-cast/code/requirements.txt /home/runner/work/fw-cast/fw-cast
         cd ..
         ls
+        pipenv graph
         #pipenv install -d pyinstaller
         #pipenv run pyinstaller --onefile cast.py
         #ls
