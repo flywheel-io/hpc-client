@@ -24,8 +24,5 @@ cd ..
 cd ..
 ls
 echo "sucessfully CREATED SETTINGS folder"
-# checking if cast.py is functional with installed dependencies and pipenv
-cd code
-echo "Printing pipenv graph"
-pipenv graph
+pwd
 
