@@ -45,7 +45,8 @@ jobs:
         ls
         cd dist
         pwd
-        ./cast.   #shows the similar error that was seen last time 
+        ls
+        ./cast   #shows the similar error that was seen last time 
         
    
         
