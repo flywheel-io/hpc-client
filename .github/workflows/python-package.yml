@@ -31,6 +31,7 @@ jobs:
         cd code
         ls
         pip install --user pipenv
+        pipenv install
         pipenv graph
         #pipenv run python3 cast.py   #shows same Host Not found error which I think was latest
         #echo "set up complete sucessfully"
