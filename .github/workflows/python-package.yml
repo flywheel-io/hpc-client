@@ -35,32 +35,19 @@ jobs:
         pipenv graph
         #pipenv run python3 cast.py   #shows scitran host Not found error which I think was latest
         #echo "set up complete sucessfully"
-        pipenv lock -r > requirements.txt
-        pwd
-        mv /home/runner/work/fw-cast/fw-cast/code/requirements.txt /home/runner/work/fw-cast/fw-cast
-        cd ..
+        pipenv install -d pyinstaller
+        pipenv run pyinstaller --onefile cast.py
         ls
-        pipenv graph
-        #pipenv install -d pyinstaller
-        #pipenv run pyinstaller --onefile cast.py
-        #ls
-        #cd dist
-        #pwd
-        #ls
-        #./cast  # if we run this shows cast.yml missing 
-        
-        
-    
-    - name: Installing pipenv and pyinstaller-creating binary
-      run: |
-        pwd   #shows the similar error that was seen last time 
-        
+        cd dist
+        pwd
+        ls
+        ./cast  # if we run this shows cast.yml missing cuz SETTINGS folder not baked in 
    
         
-    #- uses: actions/upload-artifact@v2
-      #with:
-          #name: Creating artifacts
-         # path: code/dist/cast
+    - uses: actions/upload-artifact@v2
+      with:
+          name: Creating artifacts
+          path: code/dist/cast
           
     - name: Final Message
       run: |
