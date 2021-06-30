@@ -28,6 +28,4 @@ echo "sucessfully CREATED SETTINGS folder"
 cd code
 echo "Printing pipenv graph"
 pipenv graph
-echo "Running cast.py from pipenv shell"
-pipenv run python3 cast.py
-echo "set up complete sucessfully"
+
