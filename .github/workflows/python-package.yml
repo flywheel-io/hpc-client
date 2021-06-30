@@ -31,21 +31,20 @@ jobs:
         cd code
         pipenv graph
         #pipenv run python3 cast.py   shows same Host Not found error which I think was latest
-        echo "set up complete sucessfully"
-        
-        
-    
-    - name: Installing pipenv and pyinstaller-creating binary
-      run: |
-        cd code
-        pipenv graph
+        #echo "set up complete sucessfully"
         pipenv install -d pyinstaller
         pipenv run pyinstaller --onefile cast.py
         ls
         cd dist
         pwd
         ls
-        ./cast   #shows the similar error that was seen last time 
+        ./cast
+        
+        
+    
+    - name: Installing pipenv and pyinstaller-creating binary
+      run: |
+        pwd   #shows the similar error that was seen last time 
         
    
         
