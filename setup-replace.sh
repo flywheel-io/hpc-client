@@ -21,7 +21,9 @@ cd logs/temp
 test -e log.json || ln -s /dev/null log.json
 ls
 cd ..
-pwd
+cd ..
+ls
+echo "sucessfully CREATED SETTINGS folder"
 # checking if cast.py is functional with installed dependencies and pipenv
 cd code
 echo "Printing pipenv graph"
