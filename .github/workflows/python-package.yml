@@ -28,6 +28,8 @@ jobs:
         echo "running setup and testing cast.py"
         sh ./setup-replace.sh
         echo "Running cast.py from pipenv shell"
+        cd code
+        pipenv graph
         pipenv run python3 cast.py
         echo "set up complete sucessfully"
         
@@ -36,6 +38,8 @@ jobs:
     - name: Installing pipenv and pyinstaller
       run: |
         sh ./setup-replace.sh
+        cd code
+        pipenv graph
         pipenv install -d pyinstaller
         pipenv run pyinstaller --onefile cast.py
         ls
