@@ -33,14 +33,14 @@ jobs:
         pip install --user pipenv
         pipenv install
         pipenv graph
-        pipenv run python3 cast.py   #shows same Host Not found error which I think was latest
+        #pipenv run python3 cast.py   #shows scitran host Not found error which I think was latest
         #echo "set up complete sucessfully"
-        #pipenv install pyinstaller
-        #pipenv run pyinstaller --onefile cast.py
-        #ls
-        #cd dist
-        #pwd
-        #ls
+        pipenv install -d pyinstaller
+        pipenv run pyinstaller --onefile cast.py
+        ls
+        cd dist
+        pwd
+        ls
        # ./cast  # if we run this shows cast.yml missing 
         
         
