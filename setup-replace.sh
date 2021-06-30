@@ -20,7 +20,8 @@ ls
 cd logs/temp
 test -e log.json || ln -s /dev/null log.json
 ls
-echo "Done with creation of settings"
+cd ..
+pwd
 # checking if cast.py is functional with installed dependencies and pipenv
 cd code
 echo "Printing pipenv graph"
