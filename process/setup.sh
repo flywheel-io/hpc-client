@@ -3,10 +3,10 @@ unset CDPATH; cd "$( dirname "${BASH_SOURCE[0]}" )"; cd "$(pwd -P)"
 cd ..
 
 # Prepare python dependencies
-cd code
+#cd code
 # Commented out for dev iteration
-pipenv install
-cd ..
+#pipenv install
+#cd ..
 
 # Copy templates to new folder for modification
 mkdir -p settings
