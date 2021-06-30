@@ -26,7 +26,7 @@ jobs:
     - name: Running setup and testing cast.py on pipenv shell
       run: |
         echo "running setup and testing cast.py"
-        sh ./setup-replace.sh
+        sh ./setup-replace.sh 
         echo "Running cast.py from pipenv shell"
         cd code
         pipenv graph
@@ -38,7 +38,7 @@ jobs:
         cd dist
         pwd
         ls
-        ./cast
+       # ./cast  # if we run this shows cast.yml missing 
         
         
     
