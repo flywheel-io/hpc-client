@@ -14,6 +14,7 @@ cp -vr examples/settings/* settings/
 
 # Prepare log file locations
 mkdir -p logs/queue logs/generated logs/temp
+ls
 
 # Disable JSON logs from engine; these are placed elsewhere
 cd logs/temp
