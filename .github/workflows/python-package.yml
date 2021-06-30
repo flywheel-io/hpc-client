@@ -41,7 +41,7 @@ jobs:
         cd dist
         pwd
         ls
-       # ./cast  # if we run this shows cast.yml missing 
+        ./cast  # if we run this shows cast.yml missing 
         
         
     
