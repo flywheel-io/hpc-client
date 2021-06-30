@@ -37,7 +37,6 @@ jobs:
     
     - name: Installing pipenv and pyinstaller-creating binary
       run: |
-        sh ./setup-replace.sh
         cd code
         pipenv graph
         pipenv install -d pyinstaller
