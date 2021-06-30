@@ -27,31 +27,21 @@ jobs:
       run: |
         echo "running setup and testing cast.py"
         sh ./setup-replace.sh
+        echo "Running cast.py from pipenv shell"
+        pipenv run python3 cast.py
+        echo "set up complete sucessfully"
         
         
     
     - name: Installing pipenv and pyinstaller
       run: |
-        pwd
-        python --version
-        ls
-        cd code
-        pip install --user pipenv    #pipenv install in setup.sh would not work
-        if [ -f requirements.txt ]; then pipenv install -r requirements.txt; fi
-        echo "Displaying the pipenv graph"
-        echo "     "
-        pipenv graph
-        cd ..
         sh ./setup-replace.sh
-        ls
-        echo "Done with creation of setting folder"
-        cd code
         pipenv install -d pyinstaller
         pipenv run pyinstaller --onefile cast.py
         ls
         cd dist
         pwd
-        #./cast.   #shows the similar error that was seen last time 
+        ./cast.   #shows the similar error that was seen last time 
         
    
         
