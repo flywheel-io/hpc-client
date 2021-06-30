@@ -2,12 +2,6 @@
 # installing pipenv and dependencies
 python --version
 ls
-cd code
-pip install --user pipenv
-pipenv lock -r > requirements.txt
-if [ -f requirements.txt ]; then pipenv install -r requirements.txt; fi
-cd ..
-
 #making settings folder
 mkdir -p settings
 cp -vr examples/settings/* settings/
