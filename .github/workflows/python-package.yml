@@ -30,12 +30,12 @@ jobs:
         echo "Running cast.py from pipenv shell"
         cd code
         pipenv graph
-        pipenv run python3 cast.py
+        #pipenv run python3 cast.py   shows same Host Not found error which I think was latest
         echo "set up complete sucessfully"
         
         
     
-    - name: Installing pipenv and pyinstaller
+    - name: Installing pipenv and pyinstaller-creating binary
       run: |
         sh ./setup-replace.sh
         cd code
