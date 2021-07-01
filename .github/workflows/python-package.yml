@@ -34,7 +34,7 @@ jobs:
         pipenv install
         echo "***** PRINTING PIPENV GRAPH ******"
         pipenv graph
-        #pipenv run python3 cast.py   #shows scitran host Not found error which I think was latest
+        pipenv run python3 cast.py   #shows scitran host Not found error which I think was latest
         #echo "set up complete sucessfully"
         #echo "***** INSTALLING PYINSTALLER ******"
         #pipenv install -d pyinstaller
