@@ -1,0 +1,49 @@
+# This workflow will install Python dependencies, run tests and lint with a variety of Python versions
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-python-with-github-actions
+name: Python package
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.9]
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Running setup and testing cast.py on pipenv shell
+      run: |
+        echo "running setup and testing cast.py"
+        sh ./setup-replace.sh 
+        echo "Running cast.py from pipenv shell"
+        cd code
+        ls
+        pip install --user pipenv
+        pipenv install
+        echo "***** PRINTING PIPENV GRAPH ******"
+        pipenv graph
+        #pipenv run python3 cast.py   #shows scitran host Not found error which I think was latest
+        #echo "set up complete sucessfully"
+        echo "***** INSTALLING PYINSTALLER ******"
+        pipenv install -d pyinstaller
+        echo "***** MAKING CAST BINARY ******"
+        pipenv run pyinstaller --onefile cast.py
+        ls
+        cd dist
+        pwd
+        echo "***** DISPLAYING CAST BINARY ******"
+        ls
+        #./cast  # if we run this shows cast.yml missing cuz SETTINGS folder not baked in 
+        echo "***** CHEERS BINARY IS CREATED ******"
+    - uses: actions/upload-artifact@v2
+      with:
+          name: Creating artifacts
+          path: code/dist/cast
+    - name: Final Message
+      run: |
+         echo "***** ARTIFACTS SUCESSFULLY UPLOADED ******"
+

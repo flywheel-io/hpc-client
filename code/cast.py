@@ -5,7 +5,12 @@
 import cluster
 from util import frame
 
+import os
+
 if __name__ == '__main__':
+
+	print("CWD", os.getcwd())
+
 	try:
 
 		start  = frame.timer()
