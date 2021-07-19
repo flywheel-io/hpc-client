@@ -1,16 +1,16 @@
-# Flywheel Cast
+# Flywheel HPC Client
 
-Cast is a self-service solution that allows Flywheel jobs and gears to run on a High Performance Computing environment. Use on-premise hardware that's already available for highly-concurrent scientific workloads!
+The HPC Client is a self-service solution that allows Flywheel jobs and gears to run on a High Performance Computing environment. Use on-premise hardware that's already available for highly-concurrent scientific workloads!
 
 **Project Status:** Prototype. You may run into some rough edges, and will need to work in tandem with Flywheel staff.
 
 ## Architecture
 
-![fw-cast architecture](https://user-images.githubusercontent.com/75435671/121969698-71719b00-cd3a-11eb-95a3-ff70a598491e.png)
+![HPC Client architecture](https://user-images.githubusercontent.com/75435671/121969698-71719b00-cd3a-11eb-95a3-ff70a598491e.png)
 
 ## HPC types
 
-Cast supports several queue mechanisms out of the box:
+The client, also called Cast, supports several queue mechanisms out of the box:
 
 | Common name              | Code name |
 | -------------------------| ----------|
