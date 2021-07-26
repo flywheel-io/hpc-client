@@ -6,7 +6,7 @@ The HPC Client is a self-service solution that allows Flywheel jobs and gears to
 
 ## Architecture
 
-![HPC Client architecture](https://user-images.githubusercontent.com/75435671/121969698-71719b00-cd3a-11eb-95a3-ff70a598491e.png)
+![hpc-client-architecture 20210726](https://user-images.githubusercontent.com/75435671/127048966-af0582f7-10dc-451c-b955-4d5ab50eaf08.png)
 
 ## HPC types
 
