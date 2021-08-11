@@ -38,6 +38,8 @@ cd fw-cast
 Prepare your cluster-specific files:
 
 ```
+pipenv install
+
 ./process/setup.sh
 ```
 

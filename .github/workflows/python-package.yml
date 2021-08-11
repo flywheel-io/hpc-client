@@ -18,7 +18,10 @@ jobs:
       with:
         python-version: ${{ matrix.python-version }}
 
-    - name: Running setup and testing cast.py on pipenv shell
+    - name: Install deps
+      run: .github/python-prep.sh
+
+    - name: Build
       run: .github/build-binary.sh
 
     - uses: actions/upload-artifact@v2
