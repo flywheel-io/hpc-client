@@ -11,7 +11,7 @@ class Sge(Base):
 		c = self.config.cast
 
 		if c.command is None:
-			c.command = [ 'qsub', '{{script_path}}']
+			c.command = ['qsub', '{{script_path}}']
 
 		if c.command_script_stdin is None:
 			c.command_script_stdin = False

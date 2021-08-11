@@ -1,8 +1,8 @@
-name: Python package
+name: build
 on: push
 jobs:
 
-  build:
+  binary:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false

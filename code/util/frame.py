@@ -154,7 +154,6 @@ def cmd_parser():
 	args.add_argument('--show-match', action='store_true', help='JSON export: job match syntax')
 	args.add_argument('--show-config', action='store_true', help='JSON export: all configs')
 
-
 	return args
 
 

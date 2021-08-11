@@ -10,7 +10,9 @@
 # E241 - multiple spaces after ':'
 # E261 - at least two spaces before inline comment
 # E265 - block comment should start with '# '
+# E202 - whitespace before ')'
+# E222 - multiple spaces after operator
 
-ignore = W191, E117, E401, E501, E221, E251, E722, E241, E261, E265
+ignore = W191, E117, E401, E501, E221, E251, E722, E241, E261, E265, E202, E222
 
 format = ${cyan}%(path)s${reset}:${yellow_bold}%(row)d${reset}:${green_bold}%(col)d${reset}: ${red_bold}%(code)s${reset} %(text)s

@@ -11,7 +11,7 @@ class Slurm(Base):
 		c = self.config.cast
 
 		if c.command is None:
-			c.command = [ 'sbatch', '{{script_path}}']
+			c.command = ['sbatch', '{{script_path}}']
 
 		if c.command_script_stdin is None:
 			c.command_script_stdin = False

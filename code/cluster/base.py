@@ -18,7 +18,7 @@ class Base(Common):
 		c = self.config.cast
 
 		if c.command is None:
-			c.command = [ 'echo', '{{script_path}}' ]
+			c.command = ['echo', '{{script_path}}']
 
 		if c.command_script_stdin is None:
 			c.command_script_stdin = False
