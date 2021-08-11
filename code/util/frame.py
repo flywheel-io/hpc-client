@@ -1,6 +1,7 @@
 import argparse, datetime, logging, json, os, warnings, yaml
 
 import flywheel, requests
+import sys
 
 from . import defn
 
@@ -34,7 +35,7 @@ log = logging
 def fatal(*args):
 	log.critical(*args)
 	log.critical('Exiting.')
-	exit(1)
+	sys.exit(1)
 
 
 def fw_fatal(msg, e):
@@ -60,17 +61,17 @@ def elapsed_ms(start):
 	return int(elapsed.total_seconds() * 1000)
 
 
-def check_paths():
+def check_paths(base_folder):
 	"""
 	Determine and check the various paths needed by the application.
 	"""
 
 	p = defn.Paths(
-		cast_path       = ez_path(os.getcwd(), ".."                         ),
-		yaml_path       = ez_path(os.getcwd(), "..", "settings", "cast.yml" ),
-		scripts_path    = ez_path(os.getcwd(), "..", "logs",     "generated"),
-		hpc_logs_path   = ez_path(os.getcwd(), "..", "logs",     "queue"    ),
-		engine_run_path = ez_path(os.getcwd(), "..", "logs",     "temp"     ),
+		cast_path       = ez_path(base_folder,                        ),
+		yaml_path       = ez_path(base_folder, "settings", "cast.yml" ),
+		scripts_path    = ez_path(base_folder, "logs",     "generated"),
+		hpc_logs_path   = ez_path(base_folder, "logs",     "queue"    ),
+		engine_run_path = ez_path(base_folder, "logs",     "temp"     ),
 	)
 
 	for path in [
@@ -107,8 +108,8 @@ def load_env_settings():
 	)
 
 
-def prepare_config():
-	paths = check_paths()
+def prepare_config(args):
+	paths = check_paths(args.folder)
 	cast = load_yaml_settings(paths.yaml_path).cast
 	creds = load_env_settings()
 
@@ -146,6 +147,10 @@ def cmd_parser():
 
 	args.description = 'Cast Flywheel jobs onto --> HPC'
 
+	default_folder = ez_path(os.getcwd(), "..")
+
+	args.add_argument('--folder', type=str, default=default_folder, help='Run from specific folder')
+
 	args.add_argument('--show-match', action='store_true', help='JSON export: job match syntax')
 	args.add_argument('--show-config', action='store_true', help='JSON export: all configs')
 
@@ -158,7 +163,7 @@ def run_cmd():
 	"""
 
 	args   = cmd_parser().parse_args()
-	config = prepare_config()
+	config = prepare_config(args)
 
 	# Print all settings in JSON
 	if args.show_config:
@@ -169,14 +174,14 @@ def run_cmd():
 		c['creds']['credential'] = '<omitted>'
 
 		print(pretty_json(c))
-		exit(0)
+		sys.exit(0)
 
 	# Print job match in JSON
 	if args.show_match:
 		log.debug("Printing gear match")
 
 		print(pretty_json(config.dict()['cast']['job_match']))
-		exit(0)
+		sys.exit(0)
 
 	config.sdk = create_client(config.creds)
 
