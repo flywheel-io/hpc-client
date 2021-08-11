@@ -4,6 +4,8 @@ The HPC Client is a self-service solution that allows Flywheel jobs and gears to
 
 **Project Status:** Prototype. You may run into some rough edges, and will need to work in tandem with Flywheel staff.
 
+[![Build Status](https://github.com/flywheel-io/hpc-client/actions/workflows/build.yml/badge.svg)](https://github.com/flywheel-io/hpc-client/actions)
+
 ## Architecture
 
 ![hpc-client-architecture 20210726](https://user-images.githubusercontent.com/75435671/127048966-af0582f7-10dc-451c-b955-4d5ab50eaf08.png)
