@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
+set -euo pipefail
+unset CDPATH; cd "$( dirname "${BASH_SOURCE[0]}" )/.."; cd "$(pwd -P)"
+set -x
 
 # This script uses pyinstaller to build a binary for environments that have trouble with python.
-
-set -x
 
 cd code
 

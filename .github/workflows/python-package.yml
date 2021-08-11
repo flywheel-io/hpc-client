@@ -26,5 +26,27 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-          name: Creating artifacts
+          name: cast-binary
           path: code/dist/cast
+
+  format:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: [3.9]
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install flake8
+      run: pip install flake8 flake8-colors
+
+    - name: Format check
+      run: .github/check-formatting.sh
