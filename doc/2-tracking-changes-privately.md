@@ -27,7 +27,13 @@ cat fw-cast-deploy-key.pub
 scp fw-cast-deploy-key <your-hpc-host>:
 ```
 
-6. Move Flywheel Cast to your private copy:
+6. In your personal github account (github.com -> account avatar -> settings -> developer settings -> personal access tokens), ensure that 'workflow' is ticked in your personal access token or else you will get the following error when trying to push to the repo:
+```
+! [remote rejected] main -> main (refusing to allow a Personal Access Token to create or update workflow `.github/workflows/build.yml` without `workflow` scope)
+error: failed to push some refs to 'https://github.com/<my_github_acct>/fw-cast.git'
+```
+
+7. Move Flywheel Cast to your private copy:
 
 ```
 git clone https://github.com/flywheel-io/fw-cast
@@ -39,7 +45,7 @@ git remote add private <your-github-location>
 git push private --all
 ```
 
-7. If you are tracking your settings (recommended), remove `/settings` from `.gitignore`, then add your files and make a commit:
+8. If you are tracking your settings (recommended), remove `/settings` from `.gitignore`, then add your files and make a commit:
 
 ```
 git add ./settings
