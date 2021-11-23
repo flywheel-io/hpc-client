@@ -44,8 +44,7 @@ class Slurm(Base):
 		)
 
 
-SCRIPT_TEMPLATE = """
-#!/bin/bash
+SCRIPT_TEMPLATE = """#!/bin/bash
 #SBATCH --job-name=fw-{{job.fw_id}}
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task={{job.cpu}}
