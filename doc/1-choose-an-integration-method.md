@@ -8,12 +8,41 @@ Check with your admin as to the best option for you.
 
 ## Option 1 - cron
 
-If cron is enabled, this is probably the best choice. The below example would run Cast once a minute:
+If cron is enabled, this is probably the best choice. The below example would run Cast once a minute.
+
+1. Create a new crontab file. Note: you maybe to prepend `sudo` if there are any permission issues.
+
+```
+crontab -e
+```
+
+2. Select a text editor if prompted.
+
+```
+Select an editor.  To change later, run 'select-editor'.
+  1. /bin/nano        <---- easiest
+  2. /usr/bin/vim.basic
+  3. /usr/bin/vim.tiny
+  4. /bin/ed
+
+Choose 1-4 [1]:
+```
+
+3. Enter the task for cron to run (at bottom of the file).  
 
 ```
 */1 * * * * ~/fw-cast/settings/start-cast.sh
 ```
 
+If the script does not run, try using `bash` or `sh` in the command:
+
+```
+*/1 * * * * bash ~/fw-cast/settings/start-cast.sh
+```
+
+4. Save and exit. Save the file with `control + O`, and hit enter when prompted about the file name and location.
+Exit with `control + X`
+   
 For further options, check out [crontab guru](https://crontab.guru/#*/1_*_*_*_*) or your system documentation.
 
 ## Option 2 - tmux
