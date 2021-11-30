@@ -111,8 +111,7 @@ class Base(Common):
 		self.log.debug('Casted job in ' + ms + ' ms.')
 
 
-SCRIPT_TEMPLATE = inspect.cleandoc("""
-#!/bin/bash
+SCRIPT_TEMPLATE = inspect.cleandoc("""#!/bin/bash
 
 echo "This is an example script. Hello world!!"
 echo
