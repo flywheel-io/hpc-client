@@ -52,8 +52,7 @@ class Lsf(Base):
 		)
 
 
-SCRIPT_TEMPLATE = """
-#!/bin/bash
+SCRIPT_TEMPLATE = """#!/bin/bash
 
 #BSUB -P flywheel
 #BSUB -J fw-{{job.fw_id}}

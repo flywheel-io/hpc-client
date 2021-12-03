@@ -20,4 +20,4 @@ logfile="$PWD/logs/cast.log"
 # Using "timeout" prevents the script hanging when launched automatically.
 # This time limit may need to be adjusted based on the speed of your system.
 cd code
-timeout 5m pipenv run ./cast.py "$@" 2>&1 | tee -a "$logfile"
+timeout 5m python -m pipenv run ./cast.py "$@" 2>&1 | tee -a "$logfile"

@@ -44,8 +44,7 @@ class Sge(Base):
 		)
 
 
-SCRIPT_TEMPLATE = """
-#!/usr/bin/env bash
+SCRIPT_TEMPLATE = """#!/usr/bin/env bash
 
 #$ -j y
 #$ -o {{script_log_path}}
