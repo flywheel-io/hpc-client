@@ -124,6 +124,11 @@ will be stored. These should be set to a location that will be able to handle th
 When Cast finds a job from a Flywheel instance, it creates an executable script (`.sh`) for the <br/>
 job and its associated log file. The job id will be the in the title of executable and <br/>
 its `.txt` log file; they are stored in the directories `fw-cast/logs/generated` and <br/>
-`fw-cast/logs/queue`, respectively.  The executable job script is created from a `SCRIPT_TEMPLATE` <br/>
-(found in `fw-cast/code/cluster`), depending on the hpc's job scheduler type (e.g., slurm).
+`fw-cast/logs/queue`, respectively.  
+
+The executable job script is created from a `SCRIPT_TEMPLATE` (found in `fw-cast/code/cluster`), <br/>
+depending on the HPC's job scheduler/cluster type (e.g., slurm). The `start-cast.sh` file <br/>
+logs this template in `fw-cast/logs/cast.log`. When troubleshooting an HPC gear, it is <br/>
+convenient to use the command `tail -60 fw-cast/logs/cast.log` to print out the last 60 lines from the <br/>
+log file, since this can get quite long.
   

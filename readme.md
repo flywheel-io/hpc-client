@@ -31,7 +31,10 @@ Otherwise, some light python development will be required.
 2. It is strongly recommended that you [make a private github repo](doc/2-tracking-changes-privately.md) to track your changes.<br/>
 This will make Cast much easier to manage.
 
-3. Perform the [initial cluster setup](doc/3-cluster-install.md).
+3. Perform the [initial cluster setup](doc/3-cluster-install.md). If you are unfamiliar with <br/>
+singularity, it is recommended that you read--at a minimum--SingularityCEs [introduction](https://sylabs.io/guides/latest/user-guide/introduction.html) <br/>
+   and [quick start](https://sylabs.io/guides/latest/user-guide/quick_start.html) guides.
+   
 
 4. If your queue type is not in the above table, or is sufficiently different, review the guide for [adding a queue type](doc/4-development-guide.md).
 
