@@ -38,12 +38,12 @@ singularity, it is recommended that you read--at a minimum--SingularityCE's [int
 4. [Create an authorization token](doc/Flywheel%20HPC%20Client%20-%20Singularity%20api%20key%20configuration.pdf) 
    so Singularity and Flywheel can work with each other.
 
-4. If your queue type is not in the above table, or is sufficiently different, review the guide for [adding a queue type](doc/4-development-guide.md).
+5. If your queue type is not in the above table, or is sufficiently different, review the guide for [adding a queue type](doc/4-development-guide.md).
 
-5. Collaborate with Flywheel staff to [install an Engine binaries](doc/Flywheel%20HPC%20Client%20-%20engine%20configuration.pdf) 
+6. Collaborate with Flywheel staff to [install an Engine binaries](doc/Flywheel%20HPC%20Client%20-%20engine%20configuration.pdf) 
    and run your first HPC job tests.
 
-6. Complete the integration method you chose in step one.<br/>
+7. Complete the integration method you chose in step one.<br/>
 Confirm Cast is running regularly by monitoring `logs/cast.log` and the Flywheel user interface.
 
-7. Enjoy!
+8. Enjoy!
