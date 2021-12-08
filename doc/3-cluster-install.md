@@ -94,7 +94,7 @@ connection credential (i.e., `SCITRAN_CORE_DRONE_SECRET` in `credentials.sh`).
 
 
 ### Folder settings
-There are four different directories/folders that one might consider changing.  The <br/>
+There are four different directories/folders that one should consider.  Three of these <br/>
 default folders can be changed by exporting/setting the corresponding environment <br/>
 variable in `fw-cast/settings/credentials.sh`
 
