@@ -32,7 +32,7 @@ Otherwise, some light python development will be required.
 This will make Cast much easier to manage.
 
 3. Perform the [initial cluster setup](doc/3-cluster-install.md). If you are unfamiliar with <br/>
-singularity, it is recommended that you read--at a minimum--SingularityCEs [introduction](https://sylabs.io/guides/latest/user-guide/introduction.html) <br/>
+singularity, it is recommended that you read--at a minimum--SingularityCE's [introduction](https://sylabs.io/guides/latest/user-guide/introduction.html) <br/>
    and [quick start](https://sylabs.io/guides/latest/user-guide/quick_start.html) guides.
    
 
