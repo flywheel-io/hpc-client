@@ -10,7 +10,7 @@ Check with your admin as to the best option for you.
 
 If cron is enabled, this is probably the best choice. The below example would run Cast once a minute.
 
-1. Create a new crontab file. Note: you maybe to prepend `sudo` if there are any permission issues.
+1. Create a new crontab file. Note: you may have to prepend `sudo` if there are any permission issues.
 
 ```
 crontab -e
@@ -40,8 +40,8 @@ If the script does not run, try using `bash` or `sh` in the command:
 */1 * * * * bash ~/fw-cast/settings/start-cast.sh
 ```
 
-4. Save and exit. Save the file with `control + O`, and hit enter when prompted about the file name and location.
-Exit with `control + X`
+4. Save and exit. If you're using nano, save the file with `control + O`, and hit enter <br/>
+   when prompted about the file name and location. Exit with `control + X`
    
 For further options, check out [crontab guru](https://crontab.guru/#*/1_*_*_*_*) or your system documentation.
 
