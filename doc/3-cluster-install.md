@@ -94,9 +94,14 @@ connection credential (i.e., `SCITRAN_CORE_DRONE_SECRET` in `credentials.sh`).
 
 
 ### Folder settings
-There are four different directories/folders that one should consider.  Three of these <br/>
+There are five different directories/folders that one should consider.  Four of these <br/>
 default folders can be changed by exporting/setting the corresponding environment <br/>
 variable in `fw-cast/settings/credentials.sh`
+
+#### [SINGULARITY_TMPDIR](https://sylabs.io/guides/latest/user-guide/build_env.html#temporary-folders)
+"When building a container, or pulling/running a SingularityCE container from a Docker/OCI source, <br/>
+a temporary working space is required. The container is constructed in this temporary space <br/>
+before being packaged into a SingularityCE SIF image."
 
 
 #### [SINGULARITY_WORKDIR](https://sylabs.io/guides/latest/user-guide/appendix.html)
