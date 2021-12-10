@@ -91,3 +91,49 @@ You need to edit each of these files in turn to configure it for your cluster:
 Each file has a variety of comments to guide you through the process.<br/>
 Work with your collaborating Flywheel employee on these settings, particularly the <br/>
 connection credential (i.e., `SCITRAN_CORE_DRONE_SECRET` in `credentials.sh`).
+
+
+### Folder settings
+There are five different directories/folders that one should consider.  Four of these <br/>
+default folders can be changed by exporting/setting the corresponding environment <br/>
+variable in `fw-cast/settings/credentials.sh`
+
+#### [SINGULARITY_TMPDIR](https://sylabs.io/guides/latest/user-guide/build_env.html#temporary-folders)
+"When building a container, or pulling/running a SingularityCE container from a Docker/OCI source, <br/>
+a temporary working space is required. The container is constructed in this temporary space <br/>
+before being packaged into a SingularityCE SIF image."
+
+
+#### [SINGULARITY_WORKDIR](https://sylabs.io/guides/latest/user-guide/appendix.html)
+"The working directory to be used for `/tmp`, `/var/tmp` and `$HOME` (if -c or --contain was also used)".<br/>
+Instead of mounting to the default directory of the OS--i.e., `tmp` (not to be confused <br/>
+with the singularity image's `tmp` directory)--one can mount a drive that can handle intermediate <br/>
+files generated when the singularity image is run.
+
+Note: when the singularity container is built and Cast executes singularity, it passes [the flag](https://sylabs.io/guides/latest/user-guide/bind_paths_and_mounts.html?highlight=containall#containall) <br/>
+`--containall`, which does not mount a user's `$HOME` directory and additionally contains <br/>
+PID, IPC, and environment. One can set this flag when developing and testing singularity <br/> 
+images to simulate similar conditions. 
+
+#### [SINGULARITY_CACHEDIR](https://sylabs.io/guides/latest/user-guide/build_env.html#sec-cache)
+When a gear is pulled and converted to a sif file, this folder is where both docker and <br/>
+sif images are stored. The cache is created at `$HOME/.singularity/cache` by default. </br>
+
+
+#### Engine folders
+The folders `ENGINE_CACHE_DIR` and `ENGINE_TEMP_DIR` are where gear inputs and output files <br/>
+will be stored. These should be set to a location that will be able to handle the size of both
+<br/> input and output files, and both should be set to the same directory.
+
+#### Log folders
+When Cast finds a job from a Flywheel instance, it creates an executable script (`.sh`) for the <br/>
+job and its associated log file. The job id will be the in the title of executable and <br/>
+its `.txt` log file; they are stored in the directories `fw-cast/logs/generated` and <br/>
+`fw-cast/logs/queue`, respectively.  
+
+The executable job script is created from a `SCRIPT_TEMPLATE` (found in `fw-cast/code/cluster`), <br/>
+depending on the HPC's job scheduler/cluster type (e.g., slurm). The `start-cast.sh` file <br/>
+logs this template in `fw-cast/logs/cast.log`. When troubleshooting an HPC gear, it is <br/>
+convenient to use the command `tail -60 fw-cast/logs/cast.log` to print out the last 60 lines from the <br/>
+log file, since this can get quite long.
+  
