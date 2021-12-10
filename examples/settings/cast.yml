@@ -4,7 +4,7 @@ cast:
   # For a list of valid values, see cluster/__init__.py.
   cluster: 'base'
 
-  # When set, scripts are still generated, but no HPC commands are ran.
+  # When set, scripts are still generated, but no HPC commands are run.
   # Useful for testing.
   dry_run: true
 
@@ -36,7 +36,7 @@ cast:
   # Depending on your cluster implementation,
   # the options below may already be set up for you.
   #
-  # Check the corrresponding python file, and
+  # Check the corresponding python file, and
   # only un-comment these options if the hard-coded defaults
   # need to change for your system.
   #

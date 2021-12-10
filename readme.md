@@ -28,7 +28,7 @@ Otherwise, some light python development will be required.
 1. Before using Cast, you need to decide how it will run on your cluster.<br/>
 [Choose an integration method](doc/1-choose-an-integration-method.md) and keep it in mind for later.
 
-2. It is strongly recommended that you [make a private github repo](doc/2-tracking-changes-privately.md) to track your changes.<br/>
+2. It is strongly recommended that you [make a private GitHub repo](doc/2-tracking-changes-privately.md) to track your changes.<br/>
 This will make Cast much easier to manage.
 
 3. Perform the [initial cluster setup](doc/3-cluster-install.md). If you are unfamiliar with <br/>

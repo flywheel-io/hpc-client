@@ -56,7 +56,7 @@ git clone <your-github-location> fw-cast
 cd fw-cast
 ```
 
-Setup the pipenv for the fw-cast project:
+Set up the pipenv for the fw-cast project:
 ```
 cd code
 python -m pipenv install
