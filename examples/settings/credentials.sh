@@ -12,9 +12,10 @@ export ENGINE_TEMP_DIR="/some-folder"
 export FLYWHEEL_SDK_SKIP_VERSION_CHECK="1"
 
 # Flywheel site credentials. SCITRAN_RUNTIME_HOST is your flywheel site URL (e.g.,
-# `ga.ce.flywheel.io`) and SCITRAN_CORE_DRONE_SECRET will be provided by flywheel
-# support staff.
-export SCITRAN_RUNTIME_HOST="<your-hostname>"
+# `ga.ce.flywheel.io`). Do not use the scheme portion of your URL (e.g., `https://`),
+# or subdirectories (e.g., `#/projects`), only domains. SCITRAN_CORE_DRONE_SECRET will
+# be provided by flywheel support staff.
+export SCITRAN_RUNTIME_HOST="<your-flyhwheel-site-domain>"
 export SCITRAN_RUNTIME_PORT="443"
 export SCITRAN_CORE_DRONE_SECRET="<your-credentials>"
 
