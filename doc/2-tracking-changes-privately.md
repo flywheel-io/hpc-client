@@ -6,7 +6,7 @@ Keeping this tracked in version control, outside the HPC, will save a lot of hea
 Because this repository is open-source, the normal "fork" button won't do the job. <br/>
 This is very important if you choose to version your credentials, which is recommended.
 
-1. [Create a new github repository](https://github.com/new). Set it to private.
+1. [Create a new GitHub repository](https://github.com/new). Set it to private.
 
 2. Click "Settings" -> "Manage access" -> add any desired collaborators.<br/>
 In particular, whichever Flywheel staff member(s) you may be working with.
