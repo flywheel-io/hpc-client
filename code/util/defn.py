@@ -9,6 +9,8 @@ class ConfigFileCast(BaseModel):
 
 	cluster:   str
 	dry_run:   bool
+	slurm_ram:	str
+	slurm_cpu:	str
 
 	admin_contact_email:  str
 	group_whitelist:      bool
@@ -27,7 +29,6 @@ class ConfigFileCast(BaseModel):
 	script_executable:    Optional[bool]
 
 	use_hold_engine: bool
-
 
 class ConfigFile(BaseModel):
 	"""
