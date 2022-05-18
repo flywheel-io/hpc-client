@@ -39,4 +39,13 @@ export PATH=$PATH:/usr/local/bin/
 # OCI/docker layers used to create them". The default is $HOME/.singularity/cache
 # export SINGULARITY_CACHEDIR="path/to/singularity/cache"
 
+# Use SINGULARITY_BIND if you would like to mount an additional directory to the
+# singularity image/SIF file. This can be useful if you would like to use a writable
+# directory for creating temporary files instead of generating them in the default /tmp
+# directory.
+# The argument for this option is a comma-delimited string of bind path specifications in the format src[:dest[:opts]],
+# where src and dest are paths outside and inside the container, respectively. If dest is not given, it is set equal to src. Mount options
+# (opts) may be specified as ro (read-only) or rw (read/writ, which is the default). A comma-delimited string of bind path specifications can be used.
+# export SINGULARITY_BIND="/scratch/oa22/fmripreptempdir"
+
 # Do NOT put other engine settings in this file.

@@ -2,17 +2,19 @@ cast:
 
   # Cluster type.
   # For a list of valid values, see cluster/__init__.py.
-  cluster: 'base'
+  cluster: 'slurm'
 
   # When set, scripts are still generated, but no HPC commands are run.
   # Useful for testing.
-  dry_run: true
+  dry_run: false
 
   # Contact email provided to users who run into errors.
   admin_contact_email: '<Your-Email-Here>'
 
-  # When set, jobs are only allowed from users added to a group whitelist.
-  group_whitelist: true
+  # When set, jobs are only allowed from users added to a group whitelist.  If `true`,
+  # Cast will look for users added to a group called "hpc-whitelist" in your Flywheel
+  # instance. It is recommended that the group label and ID be the same (i.e., "hpc-whitelist")
+  group_whitelist: false
 
   # When set, jobs with the tag "hpc" are cast.
   cast_on_tag: true
@@ -25,12 +27,17 @@ cast:
 
   # When enabled, templating properties will be dumped to the log.
   # Useful for debugging a script or command template.
-  show_script_template_values: false
-  show_script_template_result: false
+  show_script_template_values: true
+  show_script_template_result: true
   show_commnd_template_result: true
 
   # Internal Flywheel setting. Leave this at default unless instructed.
   use_hold_engine: true
+
+  # Settings for slurm cluster ram and cpu. Uncomment if you wish to set these for all
+  # your slurm jobs.
+  # slurm_cpu: '4'
+  # slurm_ram: '12G'
 
   #
   # Depending on your cluster implementation,
