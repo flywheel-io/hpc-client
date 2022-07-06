@@ -24,6 +24,11 @@ provides support for Slurm. If you require assistance with other schedulers, con
 If your site uses one of these, it may well just need a config file to get running.<br/>
 Otherwise, some light python development will be required.
 
+## Minimum requirements
+Reference [this article](https://docs.flywheel.io/hc/en-us/articles/7563372636563) for 
+the minimum software and computing requirements of the system where the HPC Client 
+will be installed.
+
 ## Getting started
 
 1. Before using Cast, you need to decide how it will run on your cluster.<br/>
