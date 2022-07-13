@@ -33,7 +33,7 @@ will be installed.
 
 1. Before using Cast, you need to decide how it will run on your cluster.<br/>
 [Choose an integration method](doc/1-choose-an-integration-method.md) and keep it in mind for later.
-   This sets how frequent Cast with look for, pull, and queue hpc jobs to your HPC from your Flywheel site.
+   This sets how frequently Cast with look for, pull, and queue hpc jobs to your HPC from your Flywheel site.
 
 2. It is strongly recommended that you [make a private github repo](doc/2-tracking-changes-privately.md) to track your changes.<br/>
 This will make Cast much easier to manage.
