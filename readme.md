@@ -24,11 +24,16 @@ provides support for Slurm. If you require assistance with other schedulers, con
 If your site uses one of these, it may well just need a config file to get running.<br/>
 Otherwise, some light python development will be required.
 
+## Minimum requirements
+Reference [this article](https://docs.flywheel.io/hc/en-us/articles/7563372636563) for 
+the minimum software and computing requirements of the system where the HPC Client 
+will be installed.
+
 ## Getting started
 
 1. Before using Cast, you need to decide how it will run on your cluster.<br/>
 [Choose an integration method](doc/1-choose-an-integration-method.md) and keep it in mind for later.
-   This sets how frequent Cast with look for, pull, and queue hpc jobs to your HPC from your Flywheel site.
+   This sets how frequently Cast with look for, pull, and queue hpc jobs to your HPC from your Flywheel site.
 
 2. It is strongly recommended that you [make a private GitHub repo](doc/2-tracking-changes-privately.md) to track your changes.<br/>
 This will make Cast much easier to manage.
